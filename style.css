@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body {
+    background-color: #F59CA9;
+}
+
+.container {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+
+.box {
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.51);
+    font-size: 10vmin;
+    color: #89043D;
+    background-color: #F9DEC9;
+    cursor: pointer;
+    animation: float 3s ease-in-out infinite, fadeIn 1.5s ease-in-out; /* Floating and fade-in animations */
+}
+
+#reset {
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: #A91756;
+    color: #fff;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    margin: 1rem 0;
+}
+
+#message {
+    font-size: 2rem; /* Enlarged winner text */
+    font-weight: bold;
+    color: #6A1B4D;
+    margin: 1rem 0;
+}
+
+/* Confetti canvas to cover full screen */
+#my-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999; /* Ensures it's above all elements */
+    pointer-events: none; /* Prevent interference with clicks */
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
